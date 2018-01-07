@@ -1,4 +1,4 @@
-1. how to download and install git .
+﻿1. how to download and install git .
 
 2. Config our username and Email:
     1) git config --global user.name "yangkun"
@@ -66,3 +66,17 @@
     1) git checkout 02wea -- index.html  必须要加 -- index.html这个参数，
 	直接 git checkout 02wa 会在为, HEAD detached at 错误，这个问题，以后再
 	解决。
+	
+17. GitHub
+
+18. Pushing to a GitHub Repositoryd
+    1) git remote add githubproject https://github.com/yangkunjmd/tutorial.git
+	2) git push -u githubproject master
+
+19. gitignore and GitHub Desktop
+    1) .gitignore文件
+	2) github/username/ repository name
+	
+20. Committing Changes to GitHub
+
+21. Branches
