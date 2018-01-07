@@ -1,0 +1,68 @@
+1. how to download and install git .
+
+2. Config our username and Email:
+    1) git config --global user.name "yangkun"
+	2) git config --global user.email "yangkunjmd@126.com"
+	3) git config --list  //display all global configurations.
+	4) git config user.name // display: yangkun 
+	5) git help commit //可以打开commit 命令的帮助页面
+	
+3. Create our first repository:
+    1) git init 
+
+4. Commit 
+    1) ls -la
+	2) git add .
+	3) git commit -m "this is the first version."
+	
+5. Adding files and the commit log.
+    1) git log //显示所有的提交记录
+	2) git log --author="yangkun" //显示特定作者的提交记录
+	3) git status 
+	
+6. Git workflow
+    1) workcopy -> staged area -> repository
+	2) git add four.txt //将文件加入到staged area
+	3) git reset HEAD four.txt //将文件返回到workcopy.或者说从staged area移除
+	4) git commit 从stage area 提交到 repository.
+
+7. How to edit files	
+    1) git add .
+	
+8. Viewing the changes that you made
+    1) git diff 对于多个文件， 会逐条列出相应的比较信息 比较的是workcopy 与 repository的信息. 当add之后，就把文件提交到了
+	    staged area. 
+	
+9. Comparing the staging area with the repository
+    1) git diff --staged first.txt  比较 staged area 和 repository之间的差异
+	
+10. How to delete files 
+    1) git rm third.txt 
+	如果确实要删除，用完此命令之后，git commit -m "delete files "就可以了。如果此时后悔删除，只能从 repository获取上一个版了
+	2) 如果用完git rm third之后就后悔了，但还没有commit，那么，可以用git reset HEAD second.txt，然后再用
+	git checkout -- second.txt 即可获取刚刚删除的文件
+	3) 最好还是直接在目录下删除，或者用rm second.txt 来删除，这时只要git checkout -- senond.txt 就可以了。
+	
+11. How to Move and Rename files
+    1) 把index.txt 改名为home.txt 命令: git add home.txt git rm index.txt git commit -m ""
+	2) 简单方法: git mv home.txt index.txt  mv完之后，就直接存在了staged area 里，直接commit 就可以了
+	3) 将文件mv到其它文件夹下: git mv index.txt a/home.txt mv完之后，应该都是存在了staged area里
+
+12. Working with an actual website
+    1)对于一个新项目，git init   git add . git commit -m ""
+	
+13. How to commit directly to the repository
+    1)git commit -am "Clean up the comments."
+
+14. Checkout this video(git it)	 undo changes to working directory.
+    1) 如何撤销working dir里已经修改的文件, git checkout -- index.html 从 repository里获取
+	相关的文件，并作为working copy。前提是这个文件只是在working copy,里，并没有提交到staged area.
+
+15. Unstage Files
+    1) git reset HEAD a/abc.txt  也就是将阶段回到 workcopy 阶段。 
+	 从stage阶段回到working copy阶段。
+	 
+16. Getting old version from the repository.
+    1) git checkout 02wea -- index.html  必须要加 -- index.html这个参数，
+	直接 git checkout 02wa 会在为, HEAD detached at 错误，这个问题，以后再
+	解决。
